@@ -13,8 +13,9 @@ knitr::opts_chunk$set(
 
 ## What is this?
 
-R switched to using HTML5 in R 4.2.0, and CRAN has started enforcing that packages on CRAN generate valid HTML5. In a few cases, roxygen2 was generating invalid HTML5, so many packages have been notified that they have issues. **This repo provides a Github Actions workflow file that you can use to reproduce the issue. Follow the instructions in the next section to understand how you can use it.**
+R switched to using HTML5 in R 4.2.0, and CRAN has started enforcing that packages on CRAN generate valid HTML5. In a few cases, roxygen2 was generating invalid HTML5, so many packages have been notified that they have issues. **We expect that simply updating roxygen2 to its latest CRAN version (7.2.1), redocumenting, and then sending your package back in is enough to fix 99.9% of the issues you might see.**
 
+However, we also know that you might want to validate that the issue is fixed, so **this repo provides a Github Actions workflow file that you can use to reproduce the issues and confirm that they have been resolved. Follow the instructions in the next section to understand how you can use it.**
 
 The note from CRAN looks something like:
 
@@ -23,10 +24,6 @@ In particular, please see the "Found the following HTML validation
 problems" NOTEs in the "HTML version of manual" check for the r-devel
 debian checks results.  
 ```
-
-**In _most_ cases, simply updating roxygen2 to its latest CRAN version (7.2.1), redocumenting, and then sending your package back in is enough to fix everything.**
-
-However, you might want to validate that you caught everything, so you'll need a way to reproduce the issues that CRAN is notifying you about. That is where the workflow file comes in.
 
 Additionally, it would be nice to compile a table of the issues and whether or not updating roxygen2 fixes the problem. I've started the table below with my specific issue, but feel free to send a PR with your own specific issues.
 
@@ -66,7 +63,7 @@ Additionally, it would be nice to compile a table of the issues and whether or n
   
   Commit the changes and push.
   
-- In most cases, just updating roxygen2 is enough. There are some cases where you will have to do more work manually. We are attempting to capture those in the table below. Please open an issue or submit a PR if you have an issue that is not yet captured.
+- In 99.9% of cases, just updating roxygen2 is enough. There are some cases where you will have to do more work manually. We are attempting to capture all issues in the table below. Please open an issue or submit a PR if you have an issue that is not yet captured.
 
 - Once everything is working, remove the workflow file from the PR, merge it, and then finish up locally with:
 
