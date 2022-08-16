@@ -13,7 +13,10 @@ knitr::opts_chunk$set(
 
 ## What is this?
 
-R switched to using HTML5 in R 4.2.0, and CRAN has started enforcing that packages on CRAN generate valid HTML5. In a few cases, roxygen2 was generating invalid HTML5, so many packages have been notified that they have issues. **We expect that simply updating roxygen2 to its latest CRAN version (7.2.1), redocumenting, and then sending your package back in is enough to fix 99.9% of the issues you might see.**
+R switched to using HTML5 in R 4.2.0, and CRAN has started enforcing that packages on CRAN generate valid HTML5.
+In a few cases, roxygen2 was generating invalid HTML5 or, more specifically, was generating `.Rd` files that give rise to invalid HTML5.
+Many maintainers have been notified that they need to fix this to keep their package safely on CRAN.
+**We expect that simply updating roxygen2 to its latest CRAN version (7.2.1), redocumenting (regenerating your `.Rd` files), and then sending your package back in is enough to fix 99.9% of the issues you might see.**
 
 However, we also know that you might want to validate that the issue is fixed, so **this repo provides a Github Actions workflow file that you can use to reproduce the issues and confirm that they have been resolved. Follow the instructions in the next section to understand how you can use it.**
 
